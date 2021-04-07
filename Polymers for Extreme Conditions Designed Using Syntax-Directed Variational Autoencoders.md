@@ -73,15 +73,17 @@ VAE는 input 데이터셋 X의 latent variables를 가지고 생성모델을 학
 
 Decoder로 하여금 synthetically, semantically 유효한 polymer SMILES를 구성할 수 있도록 하는 역할을 해줍니다. NLP에서는 어떤 언어의 문법 (CFG)을 나타내기 위해서 문장이 parse tree로 변환되고, 여기서는 polymer의 SMILES를 그에 맞는 syntactic tree 구조로 변환하기 위해 사용됩니다. 변환된 구조는 VAE의 input과 output으로 사용됩니다. 
 
-예를 들어 폴리케톤(Polyketones)의 SMILES는 \[\*\]CC(==O)\[\*\] 에 대한 parse tree는 다음과 같습니다. 
+예를 들어 폴리케톤(Polyketones)의 SMILES는 \[\*\]CC(==O)\[\*\] 에 대한 parse tree는 다음과 같습니다. 
 
-[##_Image|kage@MmKSe/btqQLkNKHwT/kMIk7BUoYPej8xccGYvXvK/img.jpg|alignCenter|data-origin-width="0" data-origin-height="0" width="411" height="524" data-ke-mobilestyle="widthContent"|Figure 6||_##]
+![image](https://user-images.githubusercontent.com/68283760/113814116-207a7f00-97ac-11eb-980d-153f228f0b89.png)
+
+
 
 위 parse tree를 만드는 데에 쓰인 Grammar
+![image](https://user-images.githubusercontent.com/68283760/113814126-24a69c80-97ac-11eb-9877-30f1524d859a.png)
 
-[##_Image|kage@tM1Ni/btqQE9z4bjD/sZSfSDMnl5CHK4kkKAo2kk/img.gif|alignLeft|data-origin-width="0" data-origin-height="0" width="612" height="NaN" data-ke-mobilestyle="widthContent"|||_##]
 
-Parse tree는 생성규칙의 sequence에 따라서 분해되고, one-hot vector 형태로 변환이 가능합니다. 변환 시에 벡터의 각 차원은 생성 규칙(production rules) 또는 SMILES의 grammar의 terminal symbol을 의미합니다. 그러니까 각 고분자 SMILES는 $X ∈R^{T\*p}$ 형태의 matrix를 갖게 되고, 이때 p는 생성 규칙과 고분자 문법의 terminal symbol의 총 개수이며, T는 SMILES input을 parse하기 위해 적용된 production수입니다. SMILES의 길이가 모두 다르기 때문에, 같은 dimension을 유지하기 위해서 X는 $T = T\_{max}$가 될 때까지  패딩되며 (dummy numbers), 이후 X는 VAE 인코더의 입력(input)으로 사용됩니다. VAE 디코더는 이 matrix X, 또는 생성 규칙(Polymer SMILES를 의미하게 되는 것)의 재구성을 시도합니다. 구문론적으로 (syntactically) 유효한 SMILES가 생성되도록 하기 위해, 디코더는 디코딩 과정에서는 항상 유효한 생성 규칙의 하위 집합에서만 선택을 할 수 있게 됩니다. 폴리케톤(Polyketones)의 SMILES \[\*\]CC(==O)\[\*\]의 syntactic tree를 나타낸 Figure 6를 살펴보면 앞서 설명한 과정에 대한 것을 그림을 통해 이해할 수 있습니다. 이 트리는 위의 Grammar에 포함된 생성 규칙을 모든 leaf node가 terminal symbol을 가질 때까지 재귀적으로 적용시켜 만들어낸 트리입니다.
+Parse tree는 생성규칙의 sequence에 따라서 분해되고, one-hot vector 형태로 변환이 가능합니다. 변환 시에 벡터의 각 차원은 생성 규칙(production rules) 또는 SMILES의 grammar의 terminal symbol을 의미합니다. 그러니까 각 고분자 SMILES는 $X ∈R^{T\*p}$ 형태의 matrix를 갖게 되고, 이때 p는 생성 규칙과 고분자 문법의 terminal symbol의 총 개수이며, T는 SMILES input을 parse하기 위해 적용된 production수입니다. SMILES의 길이가 모두 다르기 때문에, 같은 dimension을 유지하기 위해서 X는 $T = T\_{max}$가 될 때까지  패딩되며 (dummy numbers), 이후 X는 VAE 인코더의 입력(input)으로 사용됩니다. VAE 디코더는 이 matrix X, 또는 생성 규칙(Polymer SMILES를 의미하게 되는 것)의 재구성을 시도합니다. 구문론적으로 (syntactically) 유효한 SMILES가 생성되도록 하기 위해, 디코더는 디코딩 과정에서는 항상 유효한 생성 규칙의 하위 집합에서만 선택을 할 수 있게 됩니다. 폴리케톤(Polyketones)의 SMILES \[\*\]CC(==O)\[\*\]의 syntactic tree를 나타낸 Figure 6를 살펴보면 앞서 설명한 과정에 대한 것을 그림을 통해 이해할 수 있습니다. 이 트리는 위의 Grammar에 포함된 생성 규칙을 모든 leaf node가 terminal symbol을 가질 때까지 재귀적으로 적용시켜 만들어낸 트리입니다.
 
 **Incorporating Semantics**
 
