@@ -5,10 +5,6 @@
 
 Subjects: Insulators,Molecular modeling,Materials,Molecules,Polymers
 
-Authors 소개
-
-Members of Georgia Institute of Technology (Atlanta, Georgia 30332, United States) majoring either Materials Science & Engineering/Computational Science & Engineering/Chemistry & Biochemistry.
-
 이번 글에서는 2020년 12월 14일에 Chemistry of Materials 저널에 등재된 논문인 **Polymers for Extreme Conditions Designed Using Syntax-Directed Variational Autoencoders**의 내용을 정리해보도록 하겠습니다. 본 논문에서 가장 핵심적인 두 단어인 'syntax'와 'semantics'의 사전적 의미는 모두 'grammar(문법)'의 부분집합으로 해석되며, syntax는 구문론/구문  semantics는 의미론/의미를 뜻합니다. 본 포스트에서는 편의상 영문 그대로 syntax, semantics라 표기하도록 하겠습니다.
 
 ---
