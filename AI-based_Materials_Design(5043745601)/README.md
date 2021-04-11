@@ -1,4 +1,4 @@
-# AI-based_Materials_Design(5043745601)
+# AI-based Materials Design(5043745601)
 
 ### Paper Review Assignments
 
