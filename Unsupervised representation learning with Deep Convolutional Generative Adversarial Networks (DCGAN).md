@@ -1,4 +1,5 @@
 # Unsupervised representation learning with Deep Convolutional Generative Adversarial Networks (DCGAN)
+Alec Radford, Luke Metz, Soumith Chintala
 
 ### 1. Introduction
 본 연구에서는 DCGAN이라고 불리는 CNN class를 소개하고, 이들이 이미지 데이터 세트에 대한 교육을 통해 deep convolutional adversarial pair (Generator와 Discriminator) 모두에서 object 부분부터 scene까지 hierarchy 구조를 학습한다는 설득력 있는 증거를 제시한다. 또한, DCGAN을 새로운 task에 적용하여 일반적인 이미지 representation으로서 활용될 가능성을 보여준다.
@@ -84,7 +85,8 @@ Latent space에서 이미지 생성에 대한 의미 있는 변화가 발생할 
  
 
 6.3 Manipulating the Generator representation
-6.3.1 Forgetting to Draw certain objects
+
+8.3.1 Forgetting to Draw certain objects
 Generator에서 창문을 완전히 제거하려는 실험을 수행했다. 150개 샘플에 대해서 52개의 window bounding boxes를 수동으로 그렸고, 흥미롭게도 결과적으로 네트워크는 침실에 창을 그리는 것을 잊어버리고 다른 객체로 교체되는 것을 발견할 수 있었다.
 아래 그림에서 가장 상단 행을 보면, 공간의 모든 이미지가 침실처럼 보이는 것을 보여준다. 6번째 줄에는 창문이 없는 방이 천천히 거대한 창문이 있는 방으로 바뀌는 것을 볼 수 있으며, 10번째 줄에서는 TV로 보이는 것이 창으로 서서히 변환되는 것을 볼 수 있다.
  
