@@ -1,4 +1,4 @@
-## **Convolutional Networks on Graphs for Learning Molecular Fingerprints**  
+# **Convolutional Networks on Graphs for Learning Molecular Fingerprints**  
 
 David Duvenaud, Dougal Maclaurin, Jorge Aguilera-Iparragurre, Rafael Gómez-Bombarelli, Timothy Hirzel, Alán Aspuru-Guzik, and Ryan P. Adams.  
   
