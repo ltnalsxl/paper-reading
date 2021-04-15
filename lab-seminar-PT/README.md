@@ -1,4 +1,4 @@
-# 논문 발표
+# CS-AI Lab Seminar Paper Review Presentation
 
 Date | Title | Publication
 ---- | ---- | ---- 
