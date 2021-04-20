@@ -27,6 +27,6 @@ Transformer는 이러한 multi-head attention을 세가지 방법으로 이용�
 
 ### 4. Why Self-Attention
 Self-attention 사용의 이점 3가지: recurrent와 convolutional layers와 비교
-	Layer 별 총 계산 복잡도, 즉 계산량이 감소한다. 
-	병렬 처리 가능한 양이 증가한다. 
-	장거리 dependency가 학습 가능해진다. long-range dependencies를 학습하는 것은 많은 sequence transduction task에서 가장 어렵고 중요한 부분. RNN과 비교했을 때, 먼 거리에 있는 sequence에 대한 학습이 가능함이 확인되었다. 
+	1) Layer 별 총 계산 복잡도, 즉 계산량이 감소한다. 
+	2) 병렬 처리 가능한 양이 증가한다. 
+	3) 장거리 dependency가 학습 가능해진다. long-range dependencies를 학습하는 것은 많은 sequence transduction task에서 가장 어렵고 중요한 부분. RNN과 비교했을 때, 먼 거리에 있는 sequence에 대한 학습이 가능함이 확인되었다. 
