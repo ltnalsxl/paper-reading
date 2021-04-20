@@ -4,6 +4,7 @@ Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N
  
 **새로운 architecture 제안**
 Recurrent 모델의 제약 사항들을 피하고 입력과 출력 사이에 전역 의존성을 이끌어내기 위해 RNN과 CNN을 제거하고 오로지 attention mechanism에만 기초한 새롭고 간단한 network 구조인 Transformer를 제안. 
+![image](https://user-images.githubusercontent.com/68283760/115333585-e316e800-a1d4-11eb-95c9-fe0b44a5ed2b.png)
 
 Machine translation작업에 대한 실험 결과를 보면, 우리의 모델은 병렬 처리가 가능하고 학습 시간이 훨씬 덜 소요되는 동시에 품질이 우수한 것을 확인했고, 우리는 Transformer가 크고 제한된 train 자료로 영어 문법 해석에 성공적으로 적용됨으로써 다른task들에서도 잘 일반화됨을 확인했다.
 
