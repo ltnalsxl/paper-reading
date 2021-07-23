@@ -13,8 +13,3 @@ Dec, 2020 | Machine learning with physicochemical relationships solubility predi
 ### Generative Models
 Date | Title | Publication | Keywords 
 ---- | ---- | ---- | ----
-
-### A
-Date | Title | Publication
----- | ---- | ---- 
-March, 2021 | Language Models are Few-Shot Learners | 
