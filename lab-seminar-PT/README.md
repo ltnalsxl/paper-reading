@@ -7,4 +7,4 @@ Date | Title | Publication
 20.09.04 | Reinforced Adversarial Neural Computer for de Novo Molecular Design | Journal of Chemical Information and Modeling
 20.12.04 | Machine learning with physicochemical relationships: solubility prediction in organic solvents and water | Nature Communications
 21.03.18 | Language Models are Few-Shot Learners | ddd
-21.07.01 | Scientific Reports | Nature
+21.07.01 | Multi-objective Optimization for Materials Discovery via Adaptive Design | Scientific Reports (Nature)
